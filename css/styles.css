@@ -8,8 +8,7 @@
     --logo-font: "Raleway", sans-serif;
     --general-font: "Roboto", sans-serif;
     --active-botton: #188CE8;
-    
-
+    --animation: 250ms cubic-bezier(0.4, 0, 0.2, 1) 100ms;
 }
 
 .visually-hidden {
@@ -115,6 +114,8 @@ img {
     font-size: 14px;
     line-height: 1.2;
     letter-spacing: 0.02em;
+
+    transition: var(--animation);
 }
 
 .link-nav:focus,
@@ -127,18 +128,29 @@ img {
     color: #188CE8;
 }
 
-.link-nav.ccurrent::after {
+.link-nav::after {
     content: "";
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 5%;
 
     display: block;
-    width: 100%;
+    width: 90%;
     height: 4px;
 
     background-color: #2196F3;
     border-radius: 2px;
+    opacity: 0;
+    transform: scale(0.2);
+
+    transition: var(--animation);
+}
+
+.link-nav.ccurrent::after,
+.link-nav:hover::after,
+.link-nav:focus::after {
+    opacity: 1;
+    transform: scale(1);
 }
 
 .header-contact {
@@ -155,6 +167,8 @@ align-items: center;
  font-size: 14px;
  line-height: 1.14;
  letter-spacing: 0.02em;
+
+ transition: color var(--animation);
 }
 
 .contact:hover,
@@ -225,6 +239,8 @@ align-items: center;
     line-height: 1.88;
     letter-spacing: 0.06em;
     color: var(--text-color-general);
+
+    transition: var(--animation);
 }
 
 .bt-order:hover,
@@ -328,14 +344,14 @@ align-items: center;
     position: relative;
 }
 
-.overlay-box {
+.overlay-box-work {
     position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
 }
 
-.overlay-text {
+.overlay-text-work {
     padding: 27px 0;
 
     font-family: var(--general-font);
@@ -406,6 +422,8 @@ align-items: center;
     width: 44px;
     height: 44px;
     margin-bottom: 30px;
+
+    transition: var(--animation);
 }
 
 .social-icon {
@@ -460,6 +478,8 @@ align-items: center;
     border: 1px solid #AFB1B8;
     border-radius: 4px;
     color: #AFB1B8;
+
+    transition: color var(--animation);
 }
 
 .clients-link:hover,
@@ -594,6 +614,8 @@ align-items: center;
     text-align: center;
     letter-spacing: 0.03em;
     color: var(--text-color);
+
+    transition: var(--animation);
 }
 
 .filter-button:hover,
@@ -627,6 +649,42 @@ align-items: center;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 
     0px 4px 4px rgba(0, 0, 0, 0.06), 
     1px 4px 6px rgba(0, 0, 0, 0.16);
+    transition: var(--animation);
+}
+
+.wrapper-portfolio {
+    position: relative;
+}
+
+.overlay-text-portfolio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 63px 24px;
+
+    font-family: var(--general-font);
+    font-size: 18px;
+    line-height: 1.56;
+
+    letter-spacing: 0.03em;
+    color: var(--text-color-general);
+}
+
+
+.overlay-box-portfolio {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+
+    background-color: rgba(33, 150, 243, 0.9);
+
+    opacity: 0;
+}
+
+.our-work-list:hover .overlay-box-portfolio {
+    opacity: 1;
+    transition: var(--animation);
 }
 
 .gorup-work {
@@ -659,4 +717,67 @@ align-items: center;
     color: var(--contact-color);
 }
 
+.backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
 
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    transition: var(--animation);
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translatex(-50%) translatey(-50%);
+
+    width: 528px;
+    height: 581px;
+
+    background-color: #FFFFFF;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 
+    0px 1px 1px rgba(0, 0, 0, 0.14), 
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+    opacity: 1;
+    transition: opacity(0.1) 250ms ease-in;
+}
+
+.backdrop.is-hidden .modal {
+    opacity: 0.5;
+}
+
+.close-btn {
+    position: absolute;
+    top: 7px;
+    right: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    padding: 0;
+    margin: 0;
+
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+
+    cursor: pointer;
+
+
+}

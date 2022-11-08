@@ -44,7 +44,7 @@
         <section class="main-block section">
             <div class="container main-section">
                 <h1 class="general-title">Ефективні рішення для вашого бізнесу</h1>
-                <button class="bt-order" type="button">Замовити послугу</button>
+                <button class="bt-order" type="button" data-modal-open>Замовити послугу</button>
             </div>
         </section>
         <section class="section-feature-main">
@@ -102,24 +102,24 @@
                             <li>
                                 <div class="wrapper">
                                         <img src="./img/kod.jpg" alt="код" width="370">
-                                    <div class="overlay-box">
-                                        <p class="overlay-text">Десктопні додатки</p>
+                                    <div class="overlay-box-work">
+                                        <p class="overlay-text-work">Десктопні додатки</p>
                                     </div>
                                 </div>
                             </li>
                         <li>
                             <div class="wrapper">
                                 <img src="./img/phone.jpg" alt="телефон" width="370">
-                                <div class="overlay-box">
-                                    <p class="overlay-text">Мобільні додатки</p>
+                                <div class="overlay-box-work">
+                                    <p class="overlay-text-work">Мобільні додатки</p>
                                 </div>
                             </div>
                         </li>
                         <li>
                             <div class="wrapper">
                                     <img src="./img/tablet.jpg" alt="планшет" width="370">
-                                <div class="overlay-box">
-                                    <p class="overlay-text">Дизайнерські рішення</p>
+                                <div class="overlay-box-work">
+                                    <p class="overlay-text-work">Дизайнерські рішення</p>
                                 </div>
                             </div>
                         </li>
@@ -457,5 +457,15 @@
             </div>
         </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <button class="close-btn" type="button" data-modal-close>
+                <svg class="close-btn-icon" width="18px" height="18px">
+                  <use href="./img/icons.svg#icon-close"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <script src="./js/modal.js"></script>
 </body>
 </html>
