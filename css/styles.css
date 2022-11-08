@@ -650,6 +650,8 @@ align-items: center;
     0px 4px 4px rgba(0, 0, 0, 0.06), 
     1px 4px 6px rgba(0, 0, 0, 0.16);
     transition: var(--animation);
+    
+    cursor: pointer;
 }
 
 .wrapper-portfolio {
@@ -682,7 +684,8 @@ align-items: center;
     opacity: 0;
 }
 
-.our-work-list:hover .overlay-box-portfolio {
+.our-work-list:hover .overlay-box-portfolio,
+.our-work-list:focus .overlay-box-portfolio {
     opacity: 1;
     transition: var(--animation);
 }
