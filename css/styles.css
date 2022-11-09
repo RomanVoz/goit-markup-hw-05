@@ -430,6 +430,10 @@ align-items: center;
     fill: #AFB1B8;
 }
 
+.social-icon:hover {
+    transition: fill var(--animation);
+}
+
 .social-link:hover,
 .social-link:focus {
     border-radius: 50%;
@@ -613,6 +617,7 @@ align-items: center;
     line-height: 1.6;
     text-align: center;
     letter-spacing: 0.03em;
+    border-radius: 4px;
     color: var(--text-color);
 
     transition: var(--animation);
@@ -656,6 +661,7 @@ align-items: center;
 
 .wrapper-portfolio {
     position: relative;
+    overflow: hidden;
 }
 
 .overlay-text-portfolio {
@@ -672,15 +678,15 @@ align-items: center;
     color: var(--text-color-general);
 }
 
-
 .overlay-box-portfolio {
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
 
-    background-color: rgba(33, 150, 243, 0.9);
+    transform: translateY(100%);
 
+    background-color: rgba(33, 150, 243, 0.9);
     opacity: 0;
 }
 
@@ -688,6 +694,7 @@ align-items: center;
 .our-work-list:focus .overlay-box-portfolio {
     opacity: 1;
     transition: var(--animation);
+    transform: translateY(0);
 }
 
 .gorup-work {
@@ -781,6 +788,20 @@ align-items: center;
     border: 1px solid rgba(0, 0, 0, 0.1);
 
     cursor: pointer;
-
-
 }
+
+.backdrop:hover {
+    animation: backdrop 0.5s linear both;
+}
+
+@keyframes backdrop {
+    0% {
+      transform: scale(1) rotateZ(0);
+    }
+    50% {
+      transform: scale(2) rotateZ(180deg);
+    }
+    100% {
+      transform: scale(1) rotateZ(360deg);
+    }
+  }
