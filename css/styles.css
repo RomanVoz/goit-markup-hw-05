@@ -412,6 +412,7 @@ align-items: center;
     justify-content: center;
     gap: 10px;
     padding: 0;
+    padding-bottom: 30px;
 }
 
 .social-link {
@@ -421,17 +422,12 @@ align-items: center;
 
     width: 44px;
     height: 44px;
-    margin-bottom: 30px;
-
     transition: var(--animation);
 }
 
 .social-icon {
     fill: #AFB1B8;
-}
-
-.social-icon:hover {
-    transition: fill var(--animation);
+    transition: fill 250ms ease-in;
 }
 
 .social-link:hover,
@@ -460,7 +456,6 @@ align-items: center;
     letter-spacing: 0.03em;
 
     color: var(--text-color);
-
 }
 
 .clients-list {
@@ -483,13 +478,15 @@ align-items: center;
     border-radius: 4px;
     color: #AFB1B8;
 
-    transition: color var(--animation);
+    transition: border var(--animation);
 }
 
 .clients-link:hover,
 .clients-link:focus {
     border-color:  #2196F3;
     color:  #2196F3;
+    
+    transition: color var(--animation);
 }
 
 .clients-icons {
@@ -688,12 +685,12 @@ align-items: center;
 
     background-color: rgba(33, 150, 243, 0.9);
     opacity: 0;
+    transition: var(--animation);
 }
 
 .our-work-list:hover .overlay-box-portfolio,
 .our-work-list:focus .overlay-box-portfolio {
     opacity: 1;
-    transition: var(--animation);
     transform: translateY(0);
 }
 
